@@ -1,0 +1,51 @@
+SORU 4.1
+import torch
+torch.manual_seed(1)
+
+def tanh_activation(x):
+    return torch.tanh(x)
+
+def sigmoid_activation(x):
+    return 1 / (1 + torch.exp(-x))
+
+X = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)
+
+# Hidden Layer
+W1 = torch.randn(3, 50)
+b1 = torch.randn(1, 50)
+z1 = torch.matmul(X, W1) + b1
+h1 = tanh_activation(z1)
+
+# Output Layer
+W2 = torch.randn(50, 1)
+b2 = torch.randn(1, 1)
+z2 = torch.matmul(h1, W2) + b2
+output = sigmoid_activation(z2)
+
+print(output)
+
+SORU 4.2
+import torch
+torch.manual_seed(210401007)
+
+def tanh_activation(x):
+    return torch.tanh(x)
+
+def sigmoid_activation(x):
+    return 1 / (1 + torch.exp(-x))
+
+X = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)
+
+# Hidden Layer
+W1 = torch.randn(3, 50)
+b1 = torch.randn(1, 50)
+z1 = torch.matmul(X, W1) + b1
+h1 = tanh_activation(z1)
+
+# Output Layer
+W2 = torch.randn(50, 1)
+b2 = torch.randn(1, 1)
+z2 = torch.matmul(h1, W2) + b2
+output = sigmoid_activation(z2)
+
+print(output)
